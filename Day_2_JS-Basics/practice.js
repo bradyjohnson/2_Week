@@ -62,7 +62,7 @@ var m = (false === 0); // false
 //Create a function called myName that returns your name
   //Code Here
 myName = function(getName){
-  return(Brady)
+  return(getName);
 };
 
 
