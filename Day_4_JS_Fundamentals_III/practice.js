@@ -217,39 +217,53 @@ var user = {
 };
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
-
-  //Code Here
+//Code Here
+var x = user;
+x.name = 'Tyler S. McGinnis';
+x.email = 'tyler.mcginnis@devmounta.in';
 
 //Now call the sayName method that's on the user object which will alert the users email
-
-  //Code Here
-
-
-
+//Code Here
+user.sayName();
 
 //NEXT PROBLEM
+
+
+
+
+
+
 
 
 
 
 //Create an empty object called methodCollection.
-
-  //Code Here
+//Code Here
+var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
-
-  //Code Here
+//Code Here
+methodCollection.alertHello = function(){
+  alert('hello')
+};
+methodCollection.logHello = function(){
+    console.log('hello')
+};
 
 //Now call your alertHello and logHello methods.
-
-  //Code Here
-
-
-
+//Code Here
+methodCollection.alertHello();
+methodCollection.logHello();
 
 //NEXT PROBLEM
+
+
+
+
+
+
 
 
 
@@ -278,23 +292,31 @@ var colt = {
     name: 'Colt',
     position: 'Everything really',
     spiritAnimal: 'Young Male Horse'
-}
+};
 
 /*Above you're given an empty array with four objects. Fill the devMountainEmployees
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
-
-  //Code Here
+//Code Here
+devMountainEmployees = ['Tyler', 'Cahlan', 'Ryan', 'Colt'];
+console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
-
-  //Code Here
-
-
-
+//Code Here
+for (var i = devMountainEmployees.length -1; i >= 0; i--){
+    if(devMountainEmployees[i] === 'Cahlan'){
+        devMountainEmployees.splice(i, 1);
+    }
+}
 
 //NEXT PROBLEM
+
+
+
+
+
+
 
 
 
@@ -305,17 +327,16 @@ Let's think back to our itunes example (tylermcginnis.com/itunes).
 Notice that when you type in an artist name, iTunes gives us back a LOT of data.
 What they're really giving us is an Array full of Objects. It probably looks something
 like this. */
-
 var data = [
     {
         artist: 'shakira',
         album: 'hips don\'t lie',
-        tracks: 16,
+        tracks: 16
     },
     {
         artist: 'shakira',
         album: 'mariposa',
-        tracks: 12,
+        tracks: 12
     },
     {
         artist: 'shakira',
@@ -324,27 +345,49 @@ var data = [
     }
 ];
 
-
-
 /*A very clean way to pass around large LISTS (arrays) of COLLECTIONS (objects)
 of Data is to have an Array full of objects. */
-
 //Create an empty array called users.
-
-  //Code Here
+//Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
-
 //include this as one of the objects in your array.
-var user1 = {
+var test = {
     name: 'Tyler McGinnis',
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
-}
+};
 
 //Your Code Here
+users = [
+     {
+        name: 'Tyler McGinnis',
+        email: 'tylermcginnis33@gmail.com',
+        password: 'iLoveJavaScript',
+        username: 'infiniateLoop'
+    },
+    {
+        name: 'Tyler McGinnis2',
+        email: 'tylermcginnis33@gmail.com2',
+        password: 'iLoveJavaScript2',
+        username: 'infiniateLoop2'
+    },
+    {
+        name: 'Tyler McGinnis3',
+        email: 'tylermcginnis33@gmail.com3',
+        password: 'iLoveJavaScript3',
+        username: 'infiniateLoop3'
+    },
+    {
+        name: 'Tyler McGinnis4',
+        email: 'tylermcginnis33@gmail.com4',
+        password: 'iLoveJavaScript4',
+        username: 'infiniateLoop4'
+    }
+];
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -353,10 +396,24 @@ and those objects contain properties about the specific person you follow.*/
 /*Now let's say that Tyler decided to delete his account. Loop through your array of
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular indice he's located in, delete him from the array.*/
+//Code Here
+for(var i = 0; i < users.length; i++) {
+    var obj = users[i];
 
-  //Code Here
+    if('tylermcginnis33@gmail.com'.indexOf(users.id) !== -1) {
+        users.splice(i, 1);
+        i--;
+    }
+}
+
+users[i].searchForEmail = function(){
+    if(users[i].email = 'tylermcginnis33@gmail.com')
+    delete [i];
+};
+
 
 //The activity we just did is very much how data works in 'the real world'.
-
-
-
+var person = prompt("Please enter your name", "Name");
+if (person !== null) {
+    console.log("Hello " + person + "! How are you today?");
+}
